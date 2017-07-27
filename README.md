@@ -11,7 +11,7 @@
 ```
 
 
-## 计算时间差
+## 计算日期差
 ```angular2html
   // 计算两个日期之间相差的天数
   function Computation( sDate1, sDate2){
@@ -23,4 +23,27 @@
     iDays = parseInt(Math.abs(oDate1 - oDate2) / 1000 / 60 / 60 /24)+1;   //把相差的毫秒数转换为天数
     return iDays-1;
   };
+```
+## 将时间*12:33:24*转换成秒数
+```angularjs
+countSeconds(time) {
+        debug('teme', time);
+        let arr = time.split(':');
+        let secs = arr[0] * 3600 + arr[1] * 60 + parseInt(arr[2]);
+        return secs;
+      };
+// countSeconds('12:33:24')
+```
+## 将秒数转换为时间（超过24小时并未作处理）
+```angularjs
+secondsToTime(seconds) {
+        let h = parseInt(seconds / 3600);
+        let m = parseInt(seconds % 3600 / 60);
+        let s = seconds % 3600 % 60;
+        h = h < 10 ? `0${h}` : h;
+        m = m < 10 ? `0${m}` : m;
+        s = s < 10 ? `0${s}` : s;
+        return `${h}:${m}:${s}`;
+      };
+// secondsToTime(2342)
 ```
