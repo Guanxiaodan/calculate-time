@@ -24,6 +24,7 @@
     return iDays-1;
   };
 ```
+
 ## 将时间*12:33:24*转换成秒数
 ```angularjs
 countSeconds(time) {
@@ -34,6 +35,7 @@ countSeconds(time) {
       };
 // countSeconds('12:33:24')
 ```
+
 ## 将秒数转换为时间（超过24小时并未作处理）
 ```angularjs
 secondsToTime(seconds) {
