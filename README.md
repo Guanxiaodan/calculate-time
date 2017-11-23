@@ -49,3 +49,8 @@ secondsToTime(seconds) {
       };
 // secondsToTime(2342)
 ```
+## 获取时间毫秒数
+```angular2html
+ new Date().getTime()
+ // 1511405087925
+```
