@@ -54,3 +54,9 @@ secondsToTime(seconds) {
  new Date().getTime()
  // 1511405087925
 ```
+## 将格林尼治时间转换为标准时间
+```angular2html
+var time = 2017-12-04T07:25:45.881Z
+var change = {{time.split('T')[0]}} {{time.split('T')[1].substring(0,8)}}
+console.log('change') // 2017-12-04 07:25:45 
+```
