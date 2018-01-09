@@ -2,14 +2,23 @@
 关于时间的各种计算
 
 
-## 获取今天日期
+## 获取今天日期：方法一
 ```angular2html
+
   function mmDateDay (){
     var t = new Date();
     return t.getFullYear() + '-' + _formatTwo(t.getMonth() + 1) + '-' + _formatTwo(t.getDate())
   };
 ```
 
+## 获取今天日期和时间：方法二
+```angular2html
+    var day = {};
+    day.dateAll =  new Date();
+    day.date = day.dateAll.toJSON().split('T')[0];
+    day.time = day.dateAll.toString().split(' ')[4];
+    console.log(day)
+```
 
 ## 计算日期差
 ```angular2html
