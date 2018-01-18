@@ -7,17 +7,32 @@
 
   function mmDateDay (){
     var t = new Date();
-    return t.getFullYear() + '-' + _formatTwo(t.getMonth() + 1) + '-' + _formatTwo(t.getDate())
+    return t.getFullYear() + '-' + t.getMonth() + 1 + '-' + t.getDate()
   };
+  var date = mmDateDay()
+  console.log(date) // 2018-01-17
 ```
 
-## 获取今天日期和时间：方法二
+## 获取今天日期、时间、星期：方法二
 ```angular2html
-    var day = {};
-    day.dateAll =  new Date();
-    day.date = day.dateAll.toJSON().split('T')[0];
-    day.time = day.dateAll.toString().split(' ')[4];
-    console.log(day)
+    function getDay() {
+      var day = {};
+      var week = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+      day.dateAll =  new Date();
+      day.date = day.dateAll.toJSON().split('T')[0];
+      day.time = day.dateAll.toString().split(' ')[4];
+      day.week = week[day.dateAll.getDay()];
+      return day;
+    }
+
+    var days = getDay()
+    console.log(days)
+    // {
+    //   date:"2018-01-17",
+    //   time:"16:50:55",
+    //   week:"星期三"
+    //   dateAll:Wed Jan 17 2018 16:50:55 GMT+0800 (CST) {}       
+    // }
 ```
 
 ## 计算日期差
